@@ -1,0 +1,12 @@
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\bin\Debug\net5.0\FelipEcommerce.Domain.deps.json
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\bin\Debug\net5.0\FelipEcommerce.Domain.dll
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\bin\Debug\net5.0\FelipEcommerce.Domain.pdb
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.csproj.AssemblyReference.cache
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.AssemblyInfoInputs.cache
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.AssemblyInfo.cs
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.csproj.CoreCompileInputs.cache
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.dll
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\refint\FelipEcommerce.Domain.dll
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\FelipEcommerce.Domain.pdb
+C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Domain\obj\Debug\net5.0\ref\FelipEcommerce.Domain.dll

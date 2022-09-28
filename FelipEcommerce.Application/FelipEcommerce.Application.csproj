@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FelipEcommerce.Domain\FelipEcommerce.Domain.csproj" />
+    <ProjectReference Include="..\FelipEcommerce.Persistence\FelipEcommerce.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

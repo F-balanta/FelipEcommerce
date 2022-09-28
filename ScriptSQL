@@ -1,0 +1,107 @@
+﻿IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+CREATE TABLE [Clients] (
+    [Id] int NOT NULL IDENTITY,
+    [FirstName] nvarchar(max) NULL,
+    [LastName] nvarchar(max) NULL,
+    [Phone] nvarchar(max) NULL,
+    [Dni] nvarchar(max) NULL,
+    [Address] nvarchar(max) NULL,
+    CONSTRAINT [PK_Clients] PRIMARY KEY ([Id])
+);
+GO
+
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [PurshacePrice] decimal(18,2) NOT NULL,
+    [SellingPrice] decimal(18,2) NOT NULL,
+    [Code] nvarchar(max) NULL,
+    [Minimum] int NOT NULL,
+    [Maximum] int NOT NULL,
+    [Type] nvarchar(max) NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id])
+);
+GO
+
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [FullName] nvarchar(max) NULL,
+    [UserName] nvarchar(max) NULL,
+    [Password] nvarchar(max) NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+GO
+
+CREATE TABLE [Inventory] (
+    [Id] int NOT NULL IDENTITY,
+    [ProductId] int NOT NULL,
+    [Qty] int NOT NULL,
+    [InventoryDate] datetime2 NOT NULL,
+    [Type] nvarchar(max) NULL,
+    CONSTRAINT [PK_Inventory] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Inventory_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE [Invoices] (
+    [Id] int NOT NULL IDENTITY,
+    [InvoiceNumber] nvarchar(max) NULL,
+    [ClientId] int NOT NULL,
+    [UserId] int NOT NULL,
+    [InvoiceDate] datetime2 NOT NULL,
+    [Total] decimal(18,2) NOT NULL,
+    [SubTotal] decimal(18,2) NOT NULL,
+    [Isv] int NOT NULL,
+    [Discount] int NOT NULL,
+    CONSTRAINT [PK_Invoices] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Invoices_Clients_ClientId] FOREIGN KEY ([ClientId]) REFERENCES [Clients] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_Invoices_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE [InvoiceDetail] (
+    [Id] int NOT NULL IDENTITY,
+    [ProductId] int NOT NULL,
+    [Qty] int NOT NULL,
+    [InvoiceId] int NOT NULL,
+    [Price] decimal(18,2) NOT NULL,
+    CONSTRAINT [PK_InvoiceDetail] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_InvoiceDetail_Invoices_InvoiceId] FOREIGN KEY ([InvoiceId]) REFERENCES [Invoices] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_InvoiceDetail_Products_ProductId] FOREIGN KEY ([ProductId]) REFERENCES [Products] ([Id]) ON DELETE CASCADE
+);
+GO
+
+CREATE UNIQUE INDEX [IX_Inventory_ProductId] ON [Inventory] ([ProductId]);
+GO
+
+CREATE UNIQUE INDEX [IX_InvoiceDetail_InvoiceId] ON [InvoiceDetail] ([InvoiceId]);
+GO
+
+CREATE INDEX [IX_InvoiceDetail_ProductId] ON [InvoiceDetail] ([ProductId]);
+GO
+
+CREATE INDEX [IX_Invoices_ClientId] ON [Invoices] ([ClientId]);
+GO
+
+CREATE INDEX [IX_Invoices_UserId] ON [Invoices] ([UserId]);
+GO
+
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20220928211146_InitialCreate', N'5.0.17');
+GO
+
+COMMIT;
+GO
+
