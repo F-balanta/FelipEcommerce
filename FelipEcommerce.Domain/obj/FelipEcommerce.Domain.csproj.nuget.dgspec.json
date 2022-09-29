@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {}
+    "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {
+    "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj",
+        "projectUniqueName": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj",
         "projectName": "FelipEcommerce.Domain",
-        "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj",
+        "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj",
         "packagesPath": "C:\\Users\\davo-\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\obj\\",
+        "outputPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\davo-\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

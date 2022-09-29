@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipEcommerce.Rest", "FelipEcommerce.Rest\FelipEcommerce.Rest.csproj", "{607B5287-BA22-44CF-95D4-1AD85E750091}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipEcommerce.Rest", "FelipEcommerce.Rest\FelipEcommerce.Rest.csproj", "{607B5287-BA22-44CF-95D4-1AD85E750091}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipEcommerce.Domain", "FelipEcommerce.Domain\FelipEcommerce.Domain.csproj", "{A3F92612-A23A-4BEF-BA7B-DB1C8B5E59B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipEcommerce.Domain", "FelipEcommerce.Domain\FelipEcommerce.Domain.csproj", "{A3F92612-A23A-4BEF-BA7B-DB1C8B5E59B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipEcommerce.Persistence", "FelipEcommerce.Persistence\FelipEcommerce.Persistence.csproj", "{7C453D9F-E091-4B4B-A1DE-0E7050F92DD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipEcommerce.Persistence", "FelipEcommerce.Persistence\FelipEcommerce.Persistence.csproj", "{7C453D9F-E091-4B4B-A1DE-0E7050F92DD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FelipEcommerce.Application", "FelipEcommerce.Application\FelipEcommerce.Application.csproj", "{E6B72822-73ED-4126-8806-B45F772CC66B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FelipEcommerce.Application", "FelipEcommerce.Application\FelipEcommerce.Application.csproj", "{E6B72822-73ED-4126-8806-B45F772CC66B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

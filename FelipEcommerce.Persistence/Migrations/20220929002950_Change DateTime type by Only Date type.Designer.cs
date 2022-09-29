@@ -4,14 +4,16 @@ using FelipEcommerce.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FelipEcommerce.Persistence.Migrations
 {
     [DbContext(typeof(FelipEcommerceContext))]
-    partial class FelipEcommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20220929002950_Change DateTime type by Only Date type")]
+    partial class ChangeDateTimetypebyOnlyDatetype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

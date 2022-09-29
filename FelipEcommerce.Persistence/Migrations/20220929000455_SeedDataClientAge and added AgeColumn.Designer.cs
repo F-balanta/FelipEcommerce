@@ -4,14 +4,16 @@ using FelipEcommerce.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FelipEcommerce.Persistence.Migrations
 {
     [DbContext(typeof(FelipEcommerceContext))]
-    partial class FelipEcommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20220929000455_SeedDataClientAge and added AgeColumn")]
+    partial class SeedDataClientAgeandaddedAgeColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("InventoryDate")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -91,7 +93,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            InventoryDate = new DateTime(2022, 9, 28, 0, 0, 0, 0, DateTimeKind.Local),
+                            InventoryDate = new DateTime(2022, 9, 28, 19, 4, 55, 167, DateTimeKind.Local).AddTicks(1479),
                             ProductId = 1,
                             Qty = 50,
                             Type = "XD"
@@ -112,7 +114,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("InvoiceDate")
-                        .HasColumnType("Date");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("InvoiceNumber")
                         .HasColumnType("nvarchar(max)");
@@ -121,10 +123,10 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("SubTotal")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,5)");
 
                     b.Property<decimal>("Total")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,5)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -143,7 +145,7 @@ namespace FelipEcommerce.Persistence.Migrations
                             Id = 1,
                             ClientId = 1,
                             Discount = 19,
-                            InvoiceDate = new DateTime(2022, 9, 28, 0, 0, 0, 0, DateTimeKind.Local),
+                            InvoiceDate = new DateTime(2022, 9, 28, 19, 4, 55, 164, DateTimeKind.Local).AddTicks(8984),
                             Isv = 0,
                             SubTotal = 1000m,
                             Total = 10000m,
@@ -162,7 +164,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,5)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -210,10 +212,10 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("PurshacePrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,5)");
 
                     b.Property<decimal>("SellingPrice")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,5)");
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");

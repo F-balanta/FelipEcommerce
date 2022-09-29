@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EEhrSpp9EArG+3JwiJn9URs1dfr4aaew1nZrhp3/kwNdn8tjbjBZXlfaLZgdq8BqRDWCbug/6Y2oN3Ad3ON5Vg==",
+  "dgSpecHash": "+sFf4eO8UithnXx/mAwlpmtwTk67mfIabtXMOMJ8CWVHRJOE28IaYRx7faf/4vU9xVvLI9Kdr8uPlxPAUtUnng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
+  "projectFilePath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\davo-\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

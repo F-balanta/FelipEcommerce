@@ -16,3 +16,21 @@ C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipE
 C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.pdb
 C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.genruntimeconfig.cache
 C:\Users\davo-\OneDrive\Escritorio\ProyectosProgramacion\Pruebas Tecnicas\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\ref\FelipEcommerce.Persistence.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Persistence.deps.json
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Persistence.runtimeconfig.json
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Persistence.runtimeconfig.dev.json
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Persistence.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Persistence.pdb
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Domain.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\bin\Debug\net5.0\FelipEcommerce.Domain.pdb
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.csproj.AssemblyReference.cache
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.AssemblyInfoInputs.cache
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.AssemblyInfo.cs
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.csproj.CoreCompileInputs.cache
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.csproj.CopyComplete
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\refint\FelipEcommerce.Persistence.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.pdb
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\FelipEcommerce.Persistence.genruntimeconfig.cache
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Persistence\obj\Debug\net5.0\ref\FelipEcommerce.Persistence.dll

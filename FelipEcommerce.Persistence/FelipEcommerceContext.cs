@@ -1,6 +1,6 @@
-﻿using System;
-using FelipEcommerce.Domain.Models;
+﻿using FelipEcommerce.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace FelipEcommerce.Persistence
 {
@@ -30,7 +30,8 @@ namespace FelipEcommerce.Persistence
                     Dni = "1X2X3X",
                     FirstName = "Gina",
                     LastName = "Balanta",
-                    Phone = "123456789"
+                    Phone = "123456789",
+                    Age = 34
                 }
             );
 
@@ -56,7 +57,7 @@ namespace FelipEcommerce.Persistence
                     Discount = 19,
                     SubTotal = 1000,
                     Total = 10000,
-                    InvoiceDate = DateTime.Now
+                    InvoiceDate = DateTime.Today
                 });
 
             modelBuilder.Entity<InvoiceDetail>().HasData(
@@ -76,7 +77,7 @@ namespace FelipEcommerce.Persistence
                     Type = "XD",
                     ProductId = 1,
                     Qty = 50,
-                    InventoryDate = DateTime.Now
+                    InventoryDate = DateTime.Today
                 });
 
             base.OnModelCreating(modelBuilder);
