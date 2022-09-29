@@ -130,3 +130,12 @@ D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\refint\FelipEc
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\FelipEcommerce.Rest.pdb
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\FelipEcommerce.Rest.genruntimeconfig.cache
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\ref\FelipEcommerce.Rest.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\MediatR.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\MediatR.Contracts.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\AutoMapper.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

@@ -8,7 +8,6 @@ namespace FelipEcommerce.Domain.Models
         public string FullName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-
         public ICollection<Invoice> Invonces { get; set; }
     }
 }

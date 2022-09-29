@@ -1,9 +1,9 @@
-﻿using FelipEcommerce.Domain.Models.Base;
+﻿using FelipEcommerce.Application.DAO.Base;
 using System.Collections.Generic;
 
-namespace FelipEcommerce.Domain.Models
+namespace FelipEcommerce.Application.DAO
 {
-    public class Client : BaseEntity
+    public class ClientDto : BaseDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -11,6 +11,6 @@ namespace FelipEcommerce.Domain.Models
         public string Dni { get; set; }
         public string Address { get; set; }
         public int Age { get; set; }
-        public ICollection<Invoice> Invoices { get; set; }
+        public ICollection<InvoiceDto> Invoices { get; set; }
     }
 }
