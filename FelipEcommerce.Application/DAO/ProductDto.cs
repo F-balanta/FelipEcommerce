@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using FelipEcommerce.Application.DAO.Base;
 
 namespace FelipEcommerce.Application.DAO
 {
-    public class ProductDto
+    public class ProductDto : BaseDto
     {
         public string Name { get; set; }
         public decimal PurshacePrice { get; set; }
@@ -11,7 +11,5 @@ namespace FelipEcommerce.Application.DAO
         public int Minimum { get; set; }
         public int Maximum { get; set; }
         public string Type { get; set; }
-        public ICollection<InvoiceDetailDto> InvoiceDetails { get; set; }
-        public InventoryDto Inventory { get; set; }
     }
 }

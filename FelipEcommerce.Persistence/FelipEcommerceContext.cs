@@ -84,6 +84,7 @@ namespace FelipEcommerce.Persistence
         }
 
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<InvoiceDetail> InvoicesDetail { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Inventory> Inventory { get; set; }
         public DbSet<Product> Products { get; set; }

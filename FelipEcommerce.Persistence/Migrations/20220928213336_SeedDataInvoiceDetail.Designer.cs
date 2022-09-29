@@ -274,7 +274,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("FelipEcommerce.Domain.Models.User", "User")
-                        .WithMany("Invonces")
+                        .WithMany("Invoices")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -322,7 +322,7 @@ namespace FelipEcommerce.Persistence.Migrations
 
             modelBuilder.Entity("FelipEcommerce.Domain.Models.User", b =>
                 {
-                    b.Navigation("Invonces");
+                    b.Navigation("Invoices");
                 });
 #pragma warning restore 612, 618
         }

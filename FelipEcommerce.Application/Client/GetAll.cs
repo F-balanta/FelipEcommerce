@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-
 namespace FelipEcommerce.Application.Client
 {
     public class GetAll
@@ -29,7 +28,11 @@ namespace FelipEcommerce.Application.Client
 
             public async Task<List<ClientDto>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var clients = await _context.Clients.ToListAsync(cancellationToken: cancellationToken);
+                var clients = await _context.Clients
+                    .Include(x => x.Invoices)
+                    .ThenInclude(x => x.User)
+                    .ToListAsync(cancellationToken: cancellationToken);
+
                 var clientsDto = _mapper.Map<List<ClientDto>>(clients);
                 return clientsDto;
             }

@@ -6183,22 +6183,23 @@
   },
   "packageFolders": {
     "C:\\Users\\davo-\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
+      "projectUniqueName": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
       "projectName": "FelipEcommerce.Rest",
-      "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
+      "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
       "packagesPath": "C:\\Users\\davo-\\.nuget\\packages\\",
-      "outputPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\obj\\",
+      "outputPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Rest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\davo-\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6212,8 +6213,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj": {
-              "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj"
+            "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj": {
+              "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj"
             }
           }
         }

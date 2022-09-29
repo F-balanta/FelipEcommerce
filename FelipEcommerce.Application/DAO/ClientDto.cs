@@ -11,6 +11,6 @@ namespace FelipEcommerce.Application.DAO
         public string Dni { get; set; }
         public string Address { get; set; }
         public int Age { get; set; }
-        public ICollection<InvoiceDto> Invoices { get; set; }
+        public ICollection<InvoiceWithoutClientDto> Invoices { get; set; }
     }
 }

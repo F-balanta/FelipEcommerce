@@ -14,8 +14,4 @@
     <ProjectReference Include="..\FelipEcommerce.Persistence\FelipEcommerce.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="User\" />
-  </ItemGroup>
-
 </Project>

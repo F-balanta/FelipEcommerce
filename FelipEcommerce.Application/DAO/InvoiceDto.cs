@@ -1,8 +1,9 @@
-﻿using System;
+﻿using FelipEcommerce.Application.DAO.Base;
+using System;
 
 namespace FelipEcommerce.Application.DAO
 {
-    public class InvoiceDto
+    public class InvoiceDto : BaseDto
     {
         public string InvoiceNumber { get; set; }
         public int ClientId { get; set; }
@@ -12,8 +13,8 @@ namespace FelipEcommerce.Application.DAO
         public decimal SubTotal { get; set; }
         public int Isv { get; set; }
         public int Discount { get; set; }
-        public UserDto User { get; set; }
-        public ClientDto Client { get; set; }
-        public InvoiceDetailDto InvoiceDetail { get; set; }
+
+        public UserWithoutInvoicesDto User { get; set; }
+        public ClientDtoWithoutInvoices Client { get; set; }
     }
 }

@@ -18,10 +18,16 @@ namespace FelipEcommerce.Rest.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("client")]
-        public async Task<ActionResult<List<ClientDto>>> List()
+        [HttpGet]
+        public async Task<ActionResult<List<ClientDto>>> GetClients()
         {
             return await _mediator.Send(new GetAll.Query());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ClientDto>> GetClient(int id)
+        {
+            return await _mediator.Send(new GetClientById.Query { Id = id });
         }
     }
 }

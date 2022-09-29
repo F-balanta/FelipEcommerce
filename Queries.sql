@@ -2,7 +2,6 @@
 
 SELECT Id, Name, SellingPrice FROM FelipEcommerceDB.dbo.Products;
 
-
 --  Obtener la lista de productos cuya existencia en el inventario haya llegado al mínimo permitido (5 unidades)
 
 SELECT p.Id, p.Name, p.SellingPrice FROM Products p 

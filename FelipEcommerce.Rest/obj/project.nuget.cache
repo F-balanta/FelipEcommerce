@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M8ffS8SztBMsBo+7NE3nniCEIJK4EPvmwXB+UQRgq/Xs2asnidzudNw1s2kTU5EY8cA46PqxZtdd8YBv4HzlTA==",
+  "dgSpecHash": "rGZh029KTdYiXbEqozwMjdBnsdUPDlVFd5H3Rd+hgdCuqCs3Bs/qkt6LYZx3SCArRlx1cDHBvQzpe1q2XpUwWg==",
   "success": true,
-  "projectFilePath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
+  "projectFilePath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\davo-\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

@@ -13,13 +13,9 @@ namespace FelipEcommerce.Domain.Models
         public int ClientId { get; set; }
         public int UserId { get; set; }
 
-        [Column(TypeName = "Date")]
-        public DateTime InvoiceDate { get; set; }
-
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal Total { get; set; }
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal SubTotal { get; set; }
+        [Column(TypeName = "Date")] public DateTime InvoiceDate { get; set; }
+        [Column(TypeName = "decimal(18,2)")] public decimal Total { get; set; }
+        [Column(TypeName = "decimal(18,2)")] public decimal SubTotal { get; set; }
         public int Isv { get; set; }
         public int Discount { get; set; }
 

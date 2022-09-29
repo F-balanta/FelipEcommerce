@@ -91,7 +91,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            InventoryDate = new DateTime(2022, 9, 28, 0, 0, 0, 0, DateTimeKind.Local),
+                            InventoryDate = new DateTime(2022, 9, 29, 0, 0, 0, 0, DateTimeKind.Local),
                             ProductId = 1,
                             Qty = 50,
                             Type = "XD"
@@ -143,7 +143,7 @@ namespace FelipEcommerce.Persistence.Migrations
                             Id = 1,
                             ClientId = 1,
                             Discount = 19,
-                            InvoiceDate = new DateTime(2022, 9, 28, 0, 0, 0, 0, DateTimeKind.Local),
+                            InvoiceDate = new DateTime(2022, 9, 29, 0, 0, 0, 0, DateTimeKind.Local),
                             Isv = 0,
                             SubTotal = 1000m,
                             Total = 10000m,
@@ -177,7 +177,7 @@ namespace FelipEcommerce.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("InvoiceDetail");
+                    b.ToTable("InvoicesDetail");
 
                     b.HasData(
                         new
@@ -286,7 +286,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .IsRequired();
 
                     b.HasOne("FelipEcommerce.Domain.Models.User", "User")
-                        .WithMany("Invonces")
+                        .WithMany("Invoices")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -334,7 +334,7 @@ namespace FelipEcommerce.Persistence.Migrations
 
             modelBuilder.Entity("FelipEcommerce.Domain.Models.User", b =>
                 {
-                    b.Navigation("Invonces");
+                    b.Navigation("Invoices");
                 });
 #pragma warning restore 612, 618
         }
