@@ -29,5 +29,24 @@ namespace FelipEcommerce.Rest.Controllers
         {
             return await _mediator.Send(new GetClientById.Query { Id = id });
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Unit>> CreateClient(CreateClient.CommandCreateClient data)
+        {
+            return await _mediator.Send(data);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<Unit>> EditClient(int id, EditClient.CommandEditClient data)
+        {
+            data.Id = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<Unit>> DeleteClient(int id)
+        {
+            return await _mediator.Send(new DeleteClient.CommandDeleteClient { Id = id });
+        }
     }
 }

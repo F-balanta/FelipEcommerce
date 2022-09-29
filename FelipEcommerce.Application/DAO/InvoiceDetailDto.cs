@@ -1,6 +1,8 @@
-﻿namespace FelipEcommerce.Application.DAO
+﻿using FelipEcommerce.Application.DAO.Base;
+
+namespace FelipEcommerce.Application.DAO
 {
-    public class InvoiceDetailDto
+    public class InvoiceDetailDto : BaseDto
     {
         public int ProductId { get; set; }
         public int Qty { get; set; }

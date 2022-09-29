@@ -8,9 +8,7 @@ namespace FelipEcommerce.Domain.Models
         public int ProductId { get; set; }
         public int Qty { get; set; }
         public int InvoiceId { get; set; }
-
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal Price { get; set; }
+        [Column(TypeName = "decimal(18,2)")] public decimal Price { get; set; }
 
         public Product Product { get; set; }
         public Invoice Invoice { get; set; }

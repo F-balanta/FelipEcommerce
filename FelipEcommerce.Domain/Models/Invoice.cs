@@ -1,5 +1,6 @@
 ﻿using FelipEcommerce.Domain.Models.Base;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FelipEcommerce.Domain.Models
@@ -12,7 +13,6 @@ namespace FelipEcommerce.Domain.Models
         public string InvoiceNumber { get; set; }
         public int ClientId { get; set; }
         public int UserId { get; set; }
-
         [Column(TypeName = "Date")] public DateTime InvoiceDate { get; set; }
         [Column(TypeName = "decimal(18,2)")] public decimal Total { get; set; }
         [Column(TypeName = "decimal(18,2)")] public decimal SubTotal { get; set; }
@@ -21,6 +21,6 @@ namespace FelipEcommerce.Domain.Models
 
         public User User { get; set; }
         public Client Client { get; set; }
-        public InvoiceDetail InvoiceDetail { get; set; }
+        public ICollection<InvoiceDetail> InvoiceDetail { get; set; }
     }
 }

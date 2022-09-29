@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using FelipEcommerce.Application.DAO;
 using FelipEcommerce.Application.Inventory;
@@ -28,6 +29,25 @@ namespace FelipEcommerce.Rest.Controllers
         public async Task<ActionResult<InventoryDto>> GetInventory(int id)
         {
             return await _mediator.Send(new GetInventoryById.Query { Id = id });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Unit>> CreateInventory(NewInventory.CommandInventory data)
+        {
+            return await _mediator.Send(data);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<Unit>> UpdateInventory(int id, EditInventory.CommandEditInventory data)
+        {
+            data.Id = id;
+            return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<Unit>> DeleteInventory(int id)
+        {
+            return await _mediator.Send(new DeleteInventory.CommandDelteInventory { Id = id });
         }
     }
 }
