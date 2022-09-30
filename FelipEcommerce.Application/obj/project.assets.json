@@ -5925,23 +5925,22 @@
   },
   "packageFolders": {
     "C:\\Users\\davo-\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj",
+      "projectUniqueName": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj",
       "projectName": "FelipEcommerce.Application",
-      "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj",
+      "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Application\\FelipEcommerce.Application.csproj",
       "packagesPath": "C:\\Users\\davo-\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Application\\obj\\",
+      "outputPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\davo-\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5955,11 +5954,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {
-              "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj"
+            "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj": {
+              "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj"
             },
-            "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Persistence\\FelipEcommerce.Persistence.csproj": {
-              "projectPath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Persistence\\FelipEcommerce.Persistence.csproj"
+            "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Persistence\\FelipEcommerce.Persistence.csproj": {
+              "projectPath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Persistence\\FelipEcommerce.Persistence.csproj"
             }
           }
         }

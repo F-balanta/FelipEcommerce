@@ -28,7 +28,7 @@ namespace FelipEcommerce.Rest.Controllers
         public async Task<ActionResult<ProductDto>> GetProduct(int id)
 
         {
-            return await _mediator.Send(new GetProductById.Query { Id = id });
+            return await _mediator.Send(new GetProductById.Query {Id = id});
         }
 
         [HttpPost]
@@ -42,6 +42,12 @@ namespace FelipEcommerce.Rest.Controllers
         {
             data.Id = id;
             return await _mediator.Send(data);
+        }
+
+        [HttpDelete]
+        public async Task<ActionResult<Unit>> DeleteProduct(int id)
+        {
+            return await _mediator.Send(new DeleteProduct.CommandDeleteProduct {Id = id});
         }
     }
 }

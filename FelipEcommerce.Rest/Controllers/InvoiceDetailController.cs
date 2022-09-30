@@ -28,7 +28,7 @@ namespace FelipEcommerce.Rest.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<InvoiceDetailDto>> GetInvoiceDetail(int id)
         {
-            return await _mediator.Send(new GetInvoiceDetailById.Query { Id = id });
+            return await _mediator.Send(new GetInvoiceDetailById.Query {Id = id});
         }
 
         [HttpPost]
@@ -43,6 +43,12 @@ namespace FelipEcommerce.Rest.Controllers
         {
             data.Id = id;
             return await _mediator.Send(data);
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<Unit>> DeleteInvoiceDetail(int id)
+        {
+            return await _mediator.Send(new DeleteInvoiceDetail.CommandDeleteEnvoiceDetail {Id = id});
         }
     }
 }
