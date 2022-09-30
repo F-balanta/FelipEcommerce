@@ -4,8 +4,10 @@ using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Client
 {
@@ -35,7 +37,8 @@ namespace FelipEcommerce.Application.Client
                     .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
 
                 if (client == null)
-                    throw new Exception("Client incorrect");
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new {message = $"There is no customer associated with the id {request.Id}. Please try again."});
 
                 var clientDto = _mapper.Map<ClientDto>(client);
                 return clientDto;

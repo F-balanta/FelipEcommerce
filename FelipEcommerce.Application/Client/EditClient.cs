@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FelipEcommerce.Persistence;
+using MediatR;
+using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using AutoMapper;
-using FelipEcommerce.Persistence;
-using MediatR;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Client
 {
@@ -33,7 +34,9 @@ namespace FelipEcommerce.Application.Client
             {
                 var client = await _context.Clients.FindAsync(request.Id);
                 if (client == null)
-                    throw new System.NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no customer associated with the id {request.Id}. Please try again." });
+
 
                 client.FirstName = request.FirstName ?? client.FirstName;
                 client.LastName = request.LastName ?? client.LastName;
@@ -47,7 +50,7 @@ namespace FelipEcommerce.Application.Client
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

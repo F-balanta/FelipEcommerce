@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using FelipEcommerce.Application.DAO;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +35,8 @@ namespace FelipEcommerce.Application.InvoiceDetail
                     .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
 
                 if (invoiceDetail == null)
-                    throw new Exception("Invalido...");
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no detailed invoice record associated with the id {request.Id}. Please try again." });
 
                 var invoiceDetailDto = _mapper.Map<InvoiceDetailDto>(invoiceDetail);
                 return invoiceDetailDto;

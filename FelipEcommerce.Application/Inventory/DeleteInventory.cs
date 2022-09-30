@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 
 namespace FelipEcommerce.Application.Inventory
@@ -26,12 +28,12 @@ namespace FelipEcommerce.Application.Inventory
             {
                 var inventory = await _context.Inventory.FindAsync(request.Id);
                 if (inventory == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound, new {message = "The inventory record you are looking for does not exist. Please try again." });
                 _context.Inventory.Remove(inventory);
                 var value = await _context.SaveChangesAsync(cancellationToken);
                 if (value > 0)
                     return Unit.Value;
-                throw new Exception("");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 
@@ -29,7 +31,7 @@ namespace FelipEcommerce.Application.Invoice
             {
                 var invoice = await _context.Invoices.FindAsync(request.Id);
                 if (invoice == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound, new { message = $"There is no invoice associated with the id {request.Id}" });
 
                 _context.Invoices.Remove(invoice);
 
@@ -38,7 +40,7 @@ namespace FelipEcommerce.Application.Invoice
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

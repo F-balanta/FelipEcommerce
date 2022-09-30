@@ -22,12 +22,10 @@ namespace FelipEcommerce.Application.Client
         public class Handler : IRequestHandler<CommandCreateClient>
         {
             private readonly FelipEcommerceContext _context;
-            private readonly IMapper _mapper;
 
-            public Handler(FelipEcommerceContext context, IMapper mapper)
+            public Handler(FelipEcommerceContext context)
             {
                 _context = context;
-                _mapper = mapper;
             }
 
             public async Task<Unit> Handle(CommandCreateClient request, CancellationToken cancellationToken)
@@ -49,7 +47,7 @@ namespace FelipEcommerce.Application.Client
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("Cambios no guardados");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

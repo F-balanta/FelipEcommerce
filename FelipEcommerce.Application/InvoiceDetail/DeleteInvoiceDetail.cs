@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 
@@ -30,7 +32,8 @@ namespace FelipEcommerce.Application.InvoiceDetail
             {
                 var envoideDetail = await _context.InvoicesDetail.FindAsync(request.Id);
                 if (envoideDetail == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound, 
+                        new {message = $"There is no detailed invoice record associated with the id {request.Id}. Please try again." });
 
                 _context.InvoicesDetail.Remove(envoideDetail);
 
@@ -38,7 +41,8 @@ namespace FelipEcommerce.Application.InvoiceDetail
 
                 if (value > 0)
                     return Unit.Value;
-                throw new Exception("");
+
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

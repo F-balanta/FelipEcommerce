@@ -3,8 +3,10 @@ using FelipEcommerce.Persistence;
 using MediatR;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Invoice
 {
@@ -26,19 +28,17 @@ namespace FelipEcommerce.Application.Invoice
         public class Handler : IRequestHandler<CommandEditInvoice>
         {
             private readonly FelipEcommerceContext _context;
-            private readonly IMapper _mapper;
 
-            public Handler(FelipEcommerceContext context, IMapper mapper)
+            public Handler(FelipEcommerceContext context)
             {
                 _context = context;
-                _mapper = mapper;
             }
 
             public async Task<Unit> Handle(CommandEditInvoice request, CancellationToken cancellationToken)
             {
                 var invoice = await _context.Invoices.FindAsync(request.Id);
                 if (invoice == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound, new {message = $"There is no invoice associated with the id {request.Id}" });
 
                 invoice.InvoiceNumber = request.InvoiceNumber ?? invoice.InvoiceNumber;
                 invoice.ClientId = request.ClientId ?? invoice.ClientId;
@@ -53,7 +53,7 @@ namespace FelipEcommerce.Application.Invoice
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

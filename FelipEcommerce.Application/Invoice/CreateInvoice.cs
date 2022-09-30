@@ -57,7 +57,7 @@ namespace FelipEcommerce.Application.Invoice
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("Error al crear la factura");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

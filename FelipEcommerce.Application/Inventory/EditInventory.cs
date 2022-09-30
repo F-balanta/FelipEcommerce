@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 
 namespace FelipEcommerce.Application.Inventory
@@ -30,7 +32,7 @@ namespace FelipEcommerce.Application.Inventory
             {
                 var inventory = await _context.Inventory.FindAsync(request.Id);
                 if (inventory == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound, new {message = ""});
 
                 inventory.ProductId = request.ProductId ?? inventory.ProductId;
                 inventory.Qty = request.Qty ?? inventory.Qty;

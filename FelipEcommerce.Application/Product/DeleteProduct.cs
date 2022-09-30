@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 
@@ -29,7 +31,8 @@ namespace FelipEcommerce.Application.Product
             {
                 var product = await _context.Products.FindAsync(request.Id);
                 if (product == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound,
+                        $"There is no product associated with the id {request.Id}. Please try again");
 
                 _context.Products.Remove(product);
 
@@ -38,7 +41,7 @@ namespace FelipEcommerce.Application.Product
                 if (value > 0)
                     return Unit.Value;
 
-                throw new Exception("");
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }
