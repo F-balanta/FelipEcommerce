@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FelipEcommerce.Persistence;
 using MediatR;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Invoice
 {
@@ -39,8 +38,25 @@ namespace FelipEcommerce.Application.Invoice
 
             public async Task<Unit> Handle(CommandCreateInvoice request, CancellationToken cancellationToken)
             {
+                if (await _context.Clients.FindAsync(request.ClientId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new
+                        {
+                            message =
+                                $"There is no customer associated with the id {request.ClientId}. Please try again."
+                        });
+
+                if(await _context.Clients.FindAsync(request.UserId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new
+                        {
+                            message =
+                                $"There is no user associated with the id {request.UserId}. Please try again."
+                        });
+
                 var invoice = new Domain.Models.Invoice
                 {
+                    InvoiceNumber = request.InvoiceNumber,
                     ClientId = request.ClientId,
                     UserId = request.UserId,
                     InvoiceDate = request.InvoiceDate,

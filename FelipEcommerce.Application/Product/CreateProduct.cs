@@ -3,8 +3,12 @@ using FelipEcommerce.Persistence;
 using MediatR;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq.Expressions;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
+using FelipEcommerce.Helpers;
 
 namespace FelipEcommerce.Application.Product
 {
@@ -34,10 +38,17 @@ namespace FelipEcommerce.Application.Product
                 var product = new Domain.Models.Product
                 {
                     Name = request.Name,
-                    UrlImage = request.UrlImage,
                     Description = request.Description,
                     Price = request.Price,
                 };
+
+                if (request.UrlImage != null)
+                {
+                    if (ImageUrlValidators.ImgUrlIsValid(request.UrlImage))
+                        product.UrlImage = request.UrlImage;
+                    else
+                        throw new RestException(HttpStatusCode.BadRequest, "The image url is invalid. Please try again.");
+                }
 
                 _contex.Products.Add(product);
 
@@ -46,7 +57,7 @@ namespace FelipEcommerce.Application.Product
                 if (value > 0)
                     return Unit.Value;
 
-                throw new NotImplementedException();
+                throw new Exception("The requested operation could not be performed.");
             }
         }
     }

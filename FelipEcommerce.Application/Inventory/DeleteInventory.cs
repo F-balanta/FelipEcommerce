@@ -28,7 +28,9 @@ namespace FelipEcommerce.Application.Inventory
             {
                 var inventory = await _context.Inventory.FindAsync(request.Id);
                 if (inventory == null)
-                    throw new RestException(HttpStatusCode.NotFound, new {message = "The inventory record you are looking for does not exist. Please try again." });
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"The inventory record with the id {request.Id} does not exist. Please try again." });
+
                 _context.Inventory.Remove(inventory);
                 var value = await _context.SaveChangesAsync(cancellationToken);
                 if (value > 0)

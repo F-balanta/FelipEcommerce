@@ -1,11 +1,9 @@
-﻿using AutoMapper;
-using FelipEcommerce.Persistence;
+﻿using FelipEcommerce.Persistence;
+using FluentValidation;
 using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Helpers;
-using FluentValidation;
 
 namespace FelipEcommerce.Application.Client
 {
@@ -19,18 +17,6 @@ namespace FelipEcommerce.Application.Client
             public string Dni { get; set; }
             public string Address { get; set; }
             public int Age { get; set; }
-        }
-
-        public class CommandValidator : AbstractValidator<CommandCreateClient>
-        {
-            public CommandValidator()
-            {
-                RuleFor(x => x.FirstName).Must(ValidatorsMethods.IsStringApiDefault).WithMessage("El campo es nulo");
-                RuleFor(x => x.LastName).Must(ValidatorsMethods.IsStringApiDefault).WithMessage("El campo es nulo");
-                RuleFor(x => x.Phone).Must(ValidatorsMethods.IsStringApiDefault).WithMessage("El campo es nulo");
-                RuleFor(x => x.Dni).Must(ValidatorsMethods.IsStringApiDefault).WithMessage("El campo es nulo");
-                RuleFor(x => x.Address).Must(ValidatorsMethods.IsStringApiDefault).WithMessage("El campo es nulo");
-            }
         }
 
         public class Handler : IRequestHandler<CommandCreateClient>

@@ -32,8 +32,12 @@ namespace FelipEcommerce.Application.InvoiceDetail
             {
                 var envoideDetail = await _context.InvoicesDetail.FindAsync(request.Id);
                 if (envoideDetail == null)
-                    throw new RestException(HttpStatusCode.NotFound, 
-                        new {message = $"There is no detailed invoice record associated with the id {request.Id}. Please try again." });
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new
+                        {
+                            message =
+                                $"There is no detailed invoice record associated with the id {request.Id}. Please try again."
+                        });
 
                 _context.InvoicesDetail.Remove(envoideDetail);
 

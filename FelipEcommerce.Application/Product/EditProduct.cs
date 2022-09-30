@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FelipEcommerce.Application.ErrorHandler;
+using FelipEcommerce.Helpers;
 using FelipEcommerce.Persistence;
 using MediatR;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FelipEcommerce.Application.Product
 {
@@ -43,9 +41,17 @@ namespace FelipEcommerce.Application.Product
                         $"There is no product associated with the id {request.Id}. Please try again");
 
                 product.Name = request.Name ?? product.Name;
-                product.UrlImage = request.UrlImage ?? product.UrlImage;
                 product.Description = request.Description ?? product.Description;
                 product.Price = request.Price ?? product.Price;
+
+                if (request.UrlImage != null)
+                {
+                    if (ImageUrlValidators.ImgUrlIsValid(request.UrlImage))
+                        product.UrlImage = request.UrlImage;
+                    else
+                        throw new RestException(HttpStatusCode.BadRequest,
+                            "The image url is invalid. Please try again.");
+                }
 
                 var value = await _context.SaveChangesAsync(cancellationToken);
                 if (value > 0)

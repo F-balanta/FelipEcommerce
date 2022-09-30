@@ -36,7 +36,11 @@ namespace FelipEcommerce.Application.InvoiceDetail
 
                 if (invoiceDetail == null)
                     throw new RestException(HttpStatusCode.NotFound,
-                        new { message = $"There is no detailed invoice record associated with the id {request.Id}. Please try again." });
+                        new
+                        {
+                            message =
+                                $"There is no detailed invoice record associated with the id {request.Id}. Please try again."
+                        });
 
                 var invoiceDetailDto = _mapper.Map<InvoiceDetailDto>(invoiceDetail);
                 return invoiceDetailDto;

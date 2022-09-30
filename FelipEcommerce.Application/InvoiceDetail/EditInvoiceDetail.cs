@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
@@ -6,8 +7,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
-using Microsoft.EntityFrameworkCore;
 
 namespace FelipEcommerce.Application.InvoiceDetail
 {
@@ -38,7 +37,19 @@ namespace FelipEcommerce.Application.InvoiceDetail
                 var invoiceDetail = await _context.InvoicesDetail.FindAsync(request.Id);
                 if (invoiceDetail == null)
                     throw new RestException(HttpStatusCode.NotFound,
-                        new { message = $"There is no detailed invoice record associated with the id {request.Id}. Please try again." });
+                        new
+                        {
+                            message =
+                                $"There is no detailed invoice record associated with the id {request.Id}. Please try again."
+                        });
+
+                if (await _context.Products.FindAsync(request.ProductId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no product with the id {request.ProductId}. Please try again" });
+
+                if (await _context.Invoices.FindAsync(request.InvoiceId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no invoice associated with the id {request.InvoiceId}" });
 
                 invoiceDetail.ProductId = request.ProductId ?? invoiceDetail.ProductId;
                 invoiceDetail.Qty = request.Qty ?? invoiceDetail.Qty;

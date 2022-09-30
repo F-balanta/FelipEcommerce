@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Invoice
 {
@@ -37,8 +36,26 @@ namespace FelipEcommerce.Application.Invoice
             public async Task<Unit> Handle(CommandEditInvoice request, CancellationToken cancellationToken)
             {
                 var invoice = await _context.Invoices.FindAsync(request.Id);
+
                 if (invoice == null)
-                    throw new RestException(HttpStatusCode.NotFound, new {message = $"There is no invoice associated with the id {request.Id}" });
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no invoice associated with the id {request.Id}" });
+
+                if (await _context.Clients.FindAsync(request.ClientId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new
+                        {
+                            message =
+                                $"There is no customer associated with the id {request.ClientId}. Please try again."
+                        });
+
+                if (await _context.Clients.FindAsync(request.UserId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new
+                        {
+                            message =
+                                $"There is no user associated with the id {request.UserId}. Please try again."
+                        });
 
                 invoice.InvoiceNumber = request.InvoiceNumber ?? invoice.InvoiceNumber;
                 invoice.ClientId = request.ClientId ?? invoice.ClientId;

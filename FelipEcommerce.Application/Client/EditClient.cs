@@ -35,7 +35,10 @@ namespace FelipEcommerce.Application.Client
                 var client = await _context.Clients.FindAsync(request.Id);
                 if (client == null)
                     throw new RestException(HttpStatusCode.NotFound,
-                        new { message = $"There is no customer associated with the id {request.Id}. Please try again." });
+                        new
+                        {
+                            message = $"There is no customer associated with the id {request.Id}. Please try again."
+                        });
 
 
                 client.FirstName = request.FirstName ?? client.FirstName;

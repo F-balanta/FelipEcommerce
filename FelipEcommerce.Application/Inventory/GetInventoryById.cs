@@ -4,8 +4,10 @@ using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Inventory
 {
@@ -34,7 +36,8 @@ namespace FelipEcommerce.Application.Inventory
                     .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
 
                 if (inventory == null)
-                    throw new Exception("Inventory incorrect");
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"The inventory record with the id {request.Id} does not exist. Please try again." });
 
                 var inventoryDto = _mapper.Map<InventoryDto>(inventory);
                 return inventoryDto;

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -33,11 +35,17 @@ namespace FelipEcommerce.Application.Inventory
             {
                 var inventory = new Domain.Models.Inventory
                 {
-                    ProductId = request.ProductId,
                     Qty = request.Qty,
                     InventoryDate = request.InventoryDate,
                     Type = request.Type,
                 };
+
+                var product = await _context.Products.FindAsync(request.ProductId);
+                if (product == null)
+                    throw new RestException(HttpStatusCode.NotFound, new
+                        { message = $"There is no product associated with the id {request.ProductId}" });
+
+                inventory.ProductId = request.ProductId;
 
                 _context.Inventory.Add(inventory);
 

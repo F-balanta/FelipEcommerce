@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
 using FelipEcommerce.Application.DAO;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Client
 {
@@ -38,7 +37,10 @@ namespace FelipEcommerce.Application.Client
 
                 if (client == null)
                     throw new RestException(HttpStatusCode.NotFound,
-                        new {message = $"There is no customer associated with the id {request.Id}. Please try again."});
+                        new
+                        {
+                            message = $"There is no customer associated with the id {request.Id}. Please try again."
+                        });
 
                 var clientDto = _mapper.Map<ClientDto>(client);
                 return clientDto;

@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FelipEcommerce.Application.DAO;
 using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
+using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Invoice
 {
@@ -38,7 +37,8 @@ namespace FelipEcommerce.Application.Invoice
                     .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
 
                 if (invoice == null)
-                    throw new NotImplementedException();
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no invoice associated with the id {request.Id}" });
 
                 var invoiceDto = _mapper.Map<InvoiceDto>(invoice);
                 return invoiceDto;

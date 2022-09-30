@@ -31,7 +31,8 @@ namespace FelipEcommerce.Application.Invoice
             {
                 var invoice = await _context.Invoices.FindAsync(request.Id);
                 if (invoice == null)
-                    throw new RestException(HttpStatusCode.NotFound, new { message = $"There is no invoice associated with the id {request.Id}" });
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no invoice associated with the id {request.Id}" });
 
                 _context.Invoices.Remove(invoice);
 

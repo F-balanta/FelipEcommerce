@@ -340,7 +340,7 @@ namespace FelipEcommerce.Persistence.Data
                 Name = "Mens Casual Premium Slim Fit T-Shirts",
                 Price = 100974,
                 Description = "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-                UrlImage = ""
+                UrlImage = "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
             },
             new Product
             {
@@ -356,7 +356,7 @@ namespace FelipEcommerce.Persistence.Data
                 Name = "Mens Casual Slim Fit",
                 Price = 72402,
                 Description = "he color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-                UrlImage = ""
+                UrlImage = "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
             },
             new Product
             {
@@ -396,7 +396,7 @@ namespace FelipEcommerce.Persistence.Data
                 Name = "WD 2TB Elements Portable External Hard Drive - USB 3.0",
                 Price = 289792,
                 Description = "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-                UrlImage = ""
+                UrlImage = "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
             },
             new Product
             {

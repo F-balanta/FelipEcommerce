@@ -32,7 +32,8 @@ namespace FelipEcommerce.Rest
             services.AddControllers();
 
             services.AddFluentValidationAutoValidation();
-            services.AddValidatorsFromAssemblyContaining(typeof(CreateClient));
+            services.AddValidatorsFromAssemblyContaining<ClientValidations>();
+
 
             services.AddDbContext<FelipEcommerceContext>(option =>
             {
@@ -51,7 +52,7 @@ namespace FelipEcommerce.Rest
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "FelipEcommerce.Rest", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FelipEcommerce.Rest", Version = "v1" });
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

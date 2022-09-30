@@ -1,8 +1,10 @@
 ﻿using MediatR;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 
 namespace FelipEcommerce.Application.InvoiceDetail
@@ -30,6 +32,14 @@ namespace FelipEcommerce.Application.InvoiceDetail
 
             public async Task<Unit> Handle(CommandCreateInvoiceDetail request, CancellationToken cancellationToken)
             {
+                if (await _context.Products.FindAsync(request.ProductId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no product with the id {request.ProductId}. Please try again" });
+
+                if (await _context.Invoices.FindAsync(request.InvoiceId) == null)
+                    throw new RestException(HttpStatusCode.NotFound,
+                        new { message = $"There is no invoice associated with the id {request.InvoiceId}" });
+
                 var invoiceDetail = new Domain.Models.InvoiceDetail
                 {
                     ProductId = request.ProductId,
