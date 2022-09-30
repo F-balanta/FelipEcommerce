@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using FelipEcommerce.Application.Client;
 using FelipEcommerce.Persistence;
 using MediatR;
@@ -10,11 +8,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System;
 
 namespace FelipEcommerce.Rest
 {
     public class Startup
     {
+        private const string MyCors = "MyCors";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,6 +31,15 @@ namespace FelipEcommerce.Rest
             services.AddDbContext<FelipEcommerceContext>(option =>
             {
                 option.UseSqlServer(Configuration.GetConnectionString("LocalConnection"));
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyCors, builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost").AllowAnyHeader().AllowAnyMethod();
+                });
             });
 
             services.AddSwaggerGen(c =>
@@ -55,6 +65,8 @@ namespace FelipEcommerce.Rest
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyCors);
 
             app.UseAuthorization();
 
