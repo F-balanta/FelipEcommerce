@@ -8,8 +8,8 @@ namespace FelipEcommerce.Application.Inventory
         {
             public CreateInventoryCommandValidator()
             {
-                RuleFor(x => x.InventoryDate).NotEmpty();
-                RuleFor(x => x.Qty).NotEmpty();
+                RuleFor(x => x.InventoryDate).NotEmpty().WithMessage("The inventory date must not be empty");
+                RuleFor(x => x.Qty).NotEmpty().WithMessage("The quantity must not be empty");
             }
         }
     }

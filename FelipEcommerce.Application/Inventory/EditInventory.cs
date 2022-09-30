@@ -33,7 +33,10 @@ namespace FelipEcommerce.Application.Inventory
                 var inventory = await _context.Inventory.FindAsync(request.Id);
                 if (inventory == null)
                     throw new RestException(HttpStatusCode.NotFound,
-                        new { message = $"The inventory record with the id {request.Id} does not exist. Please try again." });
+                        new
+                        {
+                            message = $"The inventory record with the id {request.Id} does not exist. Please try again."
+                        });
 
                 var product = await _context.Products.FindAsync(request.ProductId);
                 if (product == null)
