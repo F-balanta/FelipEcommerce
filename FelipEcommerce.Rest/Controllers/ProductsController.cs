@@ -44,7 +44,7 @@ namespace FelipEcommerce.Rest.Controllers
             return await _mediator.Send(data);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult<Unit>> DeleteProduct(int id)
         {
             return await _mediator.Send(new DeleteProduct.CommandDeleteProduct {Id = id});

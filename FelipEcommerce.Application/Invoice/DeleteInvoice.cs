@@ -2,12 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using FelipEcommerce.Persistence;
+using MediatR;
 
 namespace FelipEcommerce.Application.Invoice
 {
     public class DeleteInvoice
     {
-        //TODO:
+        public class CommandDeleteInvoice : IRequest
+        {
+            public int Id { get; set; }
+        }
+
+        public class Handler : IRequestHandler<CommandDeleteInvoice>
+        {
+            private readonly FelipEcommerceContext _context;
+
+            public Handler(FelipEcommerceContext context)
+            {
+                _context = context;
+            }
+
+            public async Task<Unit> Handle(CommandDeleteInvoice request, CancellationToken cancellationToken)
+            {
+                var invoice = await _context.Invoices.FindAsync(request.Id);
+                if (invoice == null)
+                    throw new NotImplementedException();
+
+                _context.Invoices.Remove(invoice);
+
+                var value = await _context.SaveChangesAsync(cancellationToken);
+
+                if (value > 0)
+                    return Unit.Value;
+
+                throw new Exception("");
+            }
+        }
     }
 }
