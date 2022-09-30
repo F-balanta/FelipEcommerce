@@ -32,3 +32,5 @@ D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\obj\Debug\net5.0\FelipEc
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\obj\Debug\net5.0\refint\FelipEcommerce.Application.dll
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\obj\Debug\net5.0\FelipEcommerce.Application.pdb
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\obj\Debug\net5.0\ref\FelipEcommerce.Application.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\bin\Debug\net5.0\FelipEcommerce.Helpers.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Application\bin\Debug\net5.0\FelipEcommerce.Helpers.pdb

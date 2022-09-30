@@ -10,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using FelipEcommerce.Rest.Middleware;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 namespace FelipEcommerce.Rest
 {
@@ -28,6 +30,9 @@ namespace FelipEcommerce.Rest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddFluentValidationAutoValidation();
+            services.AddValidatorsFromAssemblyContaining(typeof(CreateClient));
 
             services.AddDbContext<FelipEcommerceContext>(option =>
             {

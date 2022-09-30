@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "M8ffS8SztBMsBo+7NE3nniCEIJK4EPvmwXB+UQRgq/Xs2asnidzudNw1s2kTU5EY8cA46PqxZtdd8YBv4HzlTA==",
+  "dgSpecHash": "vY9ACctB3FBmAuIJh9Hkoe4oo96kUsWyDWSvSSgm10nOaAGK8IvvGY1ucVvsWKOug3zYHVHu2mCohk7C2/fxng==",
   "success": true,
   "projectFilePath": "D:\\Escritorio\\FelipEcommerce\\FelipEcommerce.Rest\\FelipEcommerce.Rest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\davo-\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\davo-\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\davo-\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\davo-\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\davo-\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

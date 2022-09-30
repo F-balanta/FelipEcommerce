@@ -148,3 +148,8 @@ D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\refint\FelipEc
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\FelipEcommerce.Rest.pdb
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\FelipEcommerce.Rest.genruntimeconfig.cache
 D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\obj\Debug\net5.0\ref\FelipEcommerce.Rest.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\FluentValidation.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\FelipEcommerce.Helpers.dll
+D:\Escritorio\FelipEcommerce\FelipEcommerce.Rest\bin\Debug\net5.0\FelipEcommerce.Helpers.pdb
