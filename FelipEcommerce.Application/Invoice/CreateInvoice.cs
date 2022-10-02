@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FelipEcommerce.Application.ErrorHandler;
+using FelipEcommerce.Helpers.Interfaces;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
@@ -6,7 +8,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Invoice
 {
@@ -14,13 +15,9 @@ namespace FelipEcommerce.Application.Invoice
     {
         public class CommandCreateInvoice : IRequest
         {
-            public string InvoiceNumber { get; set; }
             public int ClientId { get; set; }
             public int UserId { get; set; }
-
             [Column(TypeName = "Date")] public DateTime InvoiceDate { get; set; }
-            [Column(TypeName = "decimal(18,2)")] public decimal Total { get; set; }
-            [Column(TypeName = "decimal(18,2)")] public decimal SubTotal { get; set; }
             public int Isv { get; set; }
             public int Discount { get; set; }
         }
@@ -29,11 +26,13 @@ namespace FelipEcommerce.Application.Invoice
         {
             private readonly FelipEcommerceContext _context;
             private readonly IMapper _mapper;
+            private readonly IUtil _util;
 
-            public Handler(FelipEcommerceContext context, IMapper mapper)
+            public Handler(FelipEcommerceContext context, IMapper mapper, IUtil util)
             {
                 _context = context;
                 _mapper = mapper;
+                _util = util;
             }
 
             public async Task<Unit> Handle(CommandCreateInvoice request, CancellationToken cancellationToken)
@@ -46,7 +45,7 @@ namespace FelipEcommerce.Application.Invoice
                                 $"There is no customer associated with the id {request.ClientId}. Please try again."
                         });
 
-                if(await _context.Clients.FindAsync(request.UserId) == null)
+                if (await _context.Clients.FindAsync(request.UserId) == null)
                     throw new RestException(HttpStatusCode.NotFound,
                         new
                         {
@@ -56,12 +55,12 @@ namespace FelipEcommerce.Application.Invoice
 
                 var invoice = new Domain.Models.Invoice
                 {
-                    InvoiceNumber = request.InvoiceNumber,
+                    InvoiceNumber = _util.GenerateInvoiceNumber(),
                     ClientId = request.ClientId,
                     UserId = request.UserId,
                     InvoiceDate = request.InvoiceDate,
-                    Total = request.Total,
-                    SubTotal = request.SubTotal,
+                    Total = 0,
+                    SubTotal = 0,
                     Isv = request.Isv,
                     Discount = request.Discount,
                 };

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using FelipEcommerce.Application.DAO;
 using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace FelipEcommerce.Application.InvoiceDetail
 {

@@ -17,7 +17,6 @@ namespace FelipEcommerce.Application.Inventory
             public int ProductId { get; set; }
             public int Qty { get; set; }
             [Column(TypeName = "Date")] public DateTime InventoryDate { get; set; }
-            public string Type { get; set; }
         }
 
         public class Handler : IRequestHandler<CommandInventory>
@@ -36,8 +35,7 @@ namespace FelipEcommerce.Application.Inventory
                 var inventory = new Domain.Models.Inventory
                 {
                     Qty = request.Qty,
-                    InventoryDate = request.InventoryDate,
-                    Type = request.Type,
+                    InventoryDate = request.InventoryDate
                 };
 
                 var product = await _context.Products.FindAsync(request.ProductId);

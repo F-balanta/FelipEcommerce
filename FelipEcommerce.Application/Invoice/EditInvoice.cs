@@ -18,8 +18,6 @@ namespace FelipEcommerce.Application.Invoice
             public int? ClientId { get; set; }
             public int? UserId { get; set; }
             [Column(TypeName = "Date")] public DateTime? InvoiceDate { get; set; }
-            [Column(TypeName = "decimal(18,2)")] public decimal? Total { get; set; }
-            [Column(TypeName = "decimal(18,2)")] public decimal? SubTotal { get; set; }
             public int? Isv { get; set; }
             public int? Discount { get; set; }
         }
@@ -61,8 +59,6 @@ namespace FelipEcommerce.Application.Invoice
                 invoice.ClientId = request.ClientId ?? invoice.ClientId;
                 invoice.UserId = request.UserId ?? invoice.UserId;
                 invoice.InvoiceDate = request.InvoiceDate ?? invoice.InvoiceDate;
-                invoice.Total = request.Total ?? invoice.Total;
-                invoice.SubTotal = request.SubTotal ?? invoice.SubTotal;
                 invoice.Discount = request.Discount ?? invoice.Discount;
                 invoice.Isv = request.Isv ?? invoice.Isv;
 

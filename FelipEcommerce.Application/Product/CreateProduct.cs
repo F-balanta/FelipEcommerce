@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
+using FelipEcommerce.Application.ErrorHandler;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq.Expressions;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
-using FelipEcommerce.Helpers;
+using FelipEcommerce.Helpers.Interfaces;
 
 namespace FelipEcommerce.Application.Product
 {
@@ -26,11 +25,13 @@ namespace FelipEcommerce.Application.Product
         {
             private readonly FelipEcommerceContext _contex;
             private readonly IMapper _mapper;
+            private readonly IUtil _util;
 
-            public Handler(FelipEcommerceContext contex, IMapper mapper)
+            public Handler(FelipEcommerceContext contex, IMapper mapper, IUtil util)
             {
                 _contex = contex;
                 _mapper = mapper;
+                _util = util;
             }
 
             public async Task<Unit> Handle(CommandCreateProduct request, CancellationToken cancellationToken)
@@ -44,7 +45,7 @@ namespace FelipEcommerce.Application.Product
 
                 if (request.UrlImage != null)
                 {
-                    if (ImageUrlValidators.ImgUrlIsValid(request.UrlImage))
+                    if (_util.ImgUrlIsValid(request.UrlImage))
                         product.UrlImage = request.UrlImage;
                     else
                         throw new RestException(HttpStatusCode.BadRequest, "The image url is invalid. Please try again.");

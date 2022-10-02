@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FelipEcommerce.Application.ErrorHandler;
-using FelipEcommerce.Helpers;
+using FelipEcommerce.Helpers.Interfaces;
 using FelipEcommerce.Persistence;
 using MediatR;
 using System;
@@ -26,11 +26,13 @@ namespace FelipEcommerce.Application.Product
         {
             private readonly FelipEcommerceContext _context;
             private readonly IMapper _mapper;
+            private readonly IUtil _util;
 
-            public Handler(FelipEcommerceContext context, IMapper mapper)
+            public Handler(FelipEcommerceContext context, IMapper mapper, IUtil util)
             {
                 _context = context;
                 _mapper = mapper;
+                _util = util;
             }
 
             public async Task<Unit> Handle(CommandEditProduct request, CancellationToken cancellationToken)
@@ -46,7 +48,7 @@ namespace FelipEcommerce.Application.Product
 
                 if (request.UrlImage != null)
                 {
-                    if (ImageUrlValidators.ImgUrlIsValid(request.UrlImage))
+                    if (_util.ImgUrlIsValid(request.UrlImage))
                         product.UrlImage = request.UrlImage;
                     else
                         throw new RestException(HttpStatusCode.BadRequest,

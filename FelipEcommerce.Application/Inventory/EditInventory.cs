@@ -1,10 +1,10 @@
-﻿using MediatR;
+﻿using FelipEcommerce.Application.ErrorHandler;
+using FelipEcommerce.Persistence;
+using MediatR;
 using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
-using FelipEcommerce.Persistence;
 
 namespace FelipEcommerce.Application.Inventory
 {
@@ -16,7 +16,6 @@ namespace FelipEcommerce.Application.Inventory
             public int? ProductId { get; set; }
             public int? Qty { get; set; }
             public DateTime? InventoryDate { get; set; }
-            public string Type { get; set; }
         }
 
         public class Handler : IRequestHandler<CommandEditInventory>
@@ -46,7 +45,6 @@ namespace FelipEcommerce.Application.Inventory
                 inventory.ProductId = (int)request.ProductId;
                 inventory.Qty = request.Qty ?? inventory.Qty;
                 inventory.InventoryDate = request.InventoryDate ?? inventory.InventoryDate;
-                inventory.Type = request.Type ?? inventory.Type;
 
                 var value = await _context.SaveChangesAsync(cancellationToken);
                 if (value > 0)

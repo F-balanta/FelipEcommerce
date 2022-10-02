@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "tOjxFTmoodHXKsa4cUZ9157IW6wl/UhiwHYfuMHcFj58S9fZy+eX5zX9M/jBp8fQhEVN9fPM6ub8xRGtc+v7mw==",
+  "dgSpecHash": "wRPfx8DVdiF9Se3PHCy74KsqXv0PVUAkJQNuukY6zfYbAG28ZUPkNOK7ZeeezJCICcQBqq1o5G/KR+G9Q3h3ig==",
   "success": true,
   "projectFilePath": "C:\\Users\\davo-\\OneDrive\\Escritorio\\ProyectosProgramacion\\Pruebas Tecnicas\\FelipEcommerce\\FelipEcommerce.Domain\\FelipEcommerce.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\davo-\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.17\\microsoft.entityframeworkcore.abstractions.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

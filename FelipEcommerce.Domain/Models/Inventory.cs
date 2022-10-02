@@ -9,7 +9,6 @@ namespace FelipEcommerce.Domain.Models
         public int ProductId { get; set; }
         public int Qty { get; set; }
         [Column(TypeName = "Date")] public DateTime InventoryDate { get; set; }
-        public string Type { get; set; }
 
         public Product Product { get; set; }
     }

@@ -307,9 +307,6 @@ namespace FelipEcommerce.Persistence.Migrations
                     b.Property<int>("Qty")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId")
@@ -321,10 +318,9 @@ namespace FelipEcommerce.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            InventoryDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Local),
+                            InventoryDate = new DateTime(2022, 10, 2, 0, 0, 0, 0, DateTimeKind.Local),
                             ProductId = 1,
-                            Qty = 50,
-                            Type = "XD"
+                            Qty = 2
                         });
                 });
 
@@ -345,7 +341,7 @@ namespace FelipEcommerce.Persistence.Migrations
                         .HasColumnType("Date");
 
                     b.Property<string>("InvoiceNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Isv")
                         .HasColumnType("int");
@@ -363,6 +359,10 @@ namespace FelipEcommerce.Persistence.Migrations
 
                     b.HasIndex("ClientId");
 
+                    b.HasIndex("InvoiceNumber")
+                        .IsUnique()
+                        .HasFilter("[InvoiceNumber] IS NOT NULL");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Invoices");
@@ -371,13 +371,14 @@ namespace FelipEcommerce.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            ClientId = 1,
-                            Discount = 19,
-                            InvoiceDate = new DateTime(2022, 9, 30, 0, 0, 0, 0, DateTimeKind.Local),
-                            Isv = 0,
-                            SubTotal = 1000m,
-                            Total = 10000m,
-                            UserId = 1
+                            ClientId = 2,
+                            Discount = 10,
+                            InvoiceDate = new DateTime(2022, 10, 2, 0, 0, 0, 0, DateTimeKind.Local),
+                            InvoiceNumber = "8D65S96X8D",
+                            Isv = 19,
+                            SubTotal = 0m,
+                            Total = 0m,
+                            UserId = 2
                         });
                 });
 
@@ -390,9 +391,6 @@ namespace FelipEcommerce.Persistence.Migrations
 
                     b.Property<int>("InvoiceId")
                         .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -407,16 +405,6 @@ namespace FelipEcommerce.Persistence.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("InvoicesDetail");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            InvoiceId = 1,
-                            Price = 5000m,
-                            ProductId = 1,
-                            Qty = 5
-                        });
                 });
 
             modelBuilder.Entity("FelipEcommerce.Domain.Models.Product", b =>
@@ -601,6 +589,14 @@ namespace FelipEcommerce.Persistence.Migrations
                             Description = "5%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch",
                             Name = "DANVOUY Womens T Shirt Casual Cotton Short",
                             Price = 90560m,
+                            UrlImage = "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Description = "XD",
+                            Name = "Producto de prueba",
+                            Price = 5000m,
                             UrlImage = "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
                         });
                 });

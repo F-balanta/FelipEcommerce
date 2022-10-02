@@ -1,10 +1,10 @@
-﻿using FelipEcommerce.Persistence;
+﻿using FelipEcommerce.Application.ErrorHandler;
+using FelipEcommerce.Persistence;
 using MediatR;
 using System;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
-using FelipEcommerce.Application.ErrorHandler;
 
 namespace FelipEcommerce.Application.Client
 {

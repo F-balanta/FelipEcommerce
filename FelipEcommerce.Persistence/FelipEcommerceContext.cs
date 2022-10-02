@@ -1,7 +1,6 @@
 ﻿using FelipEcommerce.Domain.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
 using FelipEcommerce.Persistence.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace FelipEcommerce.Persistence
 {
@@ -17,8 +16,11 @@ namespace FelipEcommerce.Persistence
             modelBuilder.Entity<Client>().HasData(SeedData.Clients);
             modelBuilder.Entity<Product>().HasData(SeedData.Products);
             modelBuilder.Entity<Invoice>().HasData(SeedData.Invoices);
-            modelBuilder.Entity<InvoiceDetail>().HasData(SeedData.InvoiceDetails);
             modelBuilder.Entity<Inventory>().HasData(SeedData.Inventories);
+
+            modelBuilder.Entity<Invoice>().HasIndex(x => x.InvoiceNumber).IsUnique();
+            modelBuilder.Entity<Invoice>().Property(x => x.InvoiceNumber).IsRequired(false);
+
 
             base.OnModelCreating(modelBuilder);
         }

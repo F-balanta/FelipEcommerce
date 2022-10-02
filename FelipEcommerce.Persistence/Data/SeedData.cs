@@ -1,5 +1,5 @@
-﻿using System;
-using FelipEcommerce.Domain.Models;
+﻿using FelipEcommerce.Domain.Models;
+using System;
 using System.Collections.Generic;
 
 namespace FelipEcommerce.Persistence.Data
@@ -331,7 +331,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 1,
                 Name = "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
                 Price = 497854,
-                Description = "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+                Description =
+                    "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
                 UrlImage = "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
             },
             new Product
@@ -339,7 +340,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 2,
                 Name = "Mens Casual Premium Slim Fit T-Shirts",
                 Price = 100974,
-                Description = "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+                Description =
+                    "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
                 UrlImage = "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
             },
             new Product
@@ -347,7 +349,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 3,
                 Name = "Mens Cotton Jacket",
                 Price = 253523,
-                Description = "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+                Description =
+                    "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
                 UrlImage = "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
             },
             new Product
@@ -355,7 +358,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 4,
                 Name = "Mens Casual Slim Fit",
                 Price = 72402,
-                Description = "he color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+                Description =
+                    "he color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
                 UrlImage = "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
             },
             new Product
@@ -363,7 +367,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 5,
                 Name = "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
                 Price = 3146966,
-                Description = "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+                Description =
+                    "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
                 UrlImage = "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
             },
             new Product
@@ -371,7 +376,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 6,
                 Name = "Solid Gold Petite Micropave",
                 Price = 760705,
-                Description = "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+                Description =
+                    "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
                 UrlImage = "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
             },
             new Product
@@ -379,7 +385,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 7,
                 Name = "White Gold Plated Princess",
                 Price = 45234,
-                Description = "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+                Description =
+                    "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
                 UrlImage = "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
             },
             new Product
@@ -403,7 +410,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 10,
                 Name = "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
                 Price = 496752,
-                Description = "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive",
+                Description =
+                    "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive",
                 UrlImage = "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
             },
             new Product
@@ -411,7 +419,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 11,
                 Name = "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
                 Price = 498081,
-                Description = "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. ",
+                Description =
+                    "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. ",
                 UrlImage = "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
             },
             new Product
@@ -419,7 +428,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 12,
                 Name = "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
                 Price = 510721,
-                Description = "WD NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. ",
+                Description =
+                    "WD NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. ",
                 UrlImage = "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
             },
             new Product
@@ -427,15 +437,18 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 13,
                 Name = "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
                 Price = 2712277,
-                Description = "1. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. ",
+                Description =
+                    "1. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. ",
                 UrlImage = "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
             },
             new Product
             {
                 Id = 14,
-                Name = "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
+                Name =
+                    "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED",
                 Price = 4527964,
-                Description = "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY",
+                Description =
+                    "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY",
                 UrlImage = "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
             },
             new Product
@@ -443,7 +456,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 15,
                 Name = "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
                 Price = 258051,
-                Description = "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece",
+                Description =
+                    "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece",
                 UrlImage = "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
             },
             new Product
@@ -459,7 +473,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 17,
                 Name = "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
                 Price = 181075,
-                Description = "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. ",
+                Description =
+                    "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. ",
                 UrlImage = "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
             },
             new Product
@@ -467,7 +482,8 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 18,
                 Name = "MBJ Women's Solid Short Sleeve Boat Neck V",
                 Price = 44600,
-                Description = "5% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+                Description =
+                    "5% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
                 UrlImage = "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
             },
             new Product
@@ -483,7 +499,16 @@ namespace FelipEcommerce.Persistence.Data
                 Id = 20,
                 Name = "DANVOUY Womens T Shirt Casual Cotton Short",
                 Price = 90560,
-                Description = "5%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch",
+                Description =
+                    "5%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch",
+                UrlImage = "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+            },
+            new Product
+            {
+                Id = 21,
+                Name = "Producto de prueba",
+                Price = 5000,
+                Description = "XD",
                 UrlImage = "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
             }
         };
@@ -493,24 +518,14 @@ namespace FelipEcommerce.Persistence.Data
             new Invoice
             {
                 Id = 1,
-                ClientId = 1,
-                UserId = 1,
-                Discount = 19,
-                SubTotal = 1000,
-                Total = 10000,
+                ClientId = 2,
+                UserId = 2,
+                InvoiceNumber = "8D65S96X8D",
+                Isv = 19,
+                Discount = 10,
+                SubTotal = 0,
+                Total = 0,
                 InvoiceDate = DateTime.Today
-            }
-        };
-
-        public static List<InvoiceDetail> InvoiceDetails = new List<InvoiceDetail>()
-        {
-            new InvoiceDetail
-            {
-                Id = 1,
-                InvoiceId = 1,
-                Qty = 5,
-                Price = 5000,
-                ProductId = 1
             }
         };
 
@@ -519,9 +534,8 @@ namespace FelipEcommerce.Persistence.Data
             new Inventory
             {
                 Id = 1,
-                Type = "XD",
                 ProductId = 1,
-                Qty = 50,
+                Qty = 2,
                 InventoryDate = DateTime.Today
             }
         };

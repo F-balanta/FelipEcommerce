@@ -1,5 +1,4 @@
 ﻿using FelipEcommerce.Persistence;
-using FluentValidation;
 using MediatR;
 using System;
 using System.Threading;
