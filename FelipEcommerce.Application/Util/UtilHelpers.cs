@@ -16,8 +16,8 @@ namespace FelipEcommerce.Application.Util
         public string GenerateInvoiceNumber()
         {
             var path = Path.GetRandomFileName();
-            path = path.Replace(".", ""); // Remove period.
-            return path[..10].ToUpper(); // Return 8 character string
+            path = path.Replace(".", "");
+            return path[..10].ToUpper();
         }
 
         public decimal GetSimplePrice(int qty, decimal price) => price * qty;
@@ -42,22 +42,14 @@ namespace FelipEcommerce.Application.Util
             return sumaIva - restaDiscount;
         }
 
+        private const string ValidationOne =
+            @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$";
 
-        private static bool ValidImgFormat(string img)
-        {
-            const string validationOne =
-                @"^(ht|f|sf)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([randomNumber-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$";
+        private const string ValidationTwo =
+            @"^(www.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$";
 
-            const string validationTwo =
-                @"^(www.)[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([randomNumber-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$";
-
-            if (Regex.IsMatch(img, validationOne))
-                return true;
-            else if
-                (Regex.IsMatch(img, validationTwo)) return true;
-            else
-                return false;
-        }
+        private static bool ValidImgFormat(string img) =>
+            Regex.IsMatch(img, ValidationOne) || Regex.IsMatch(img, ValidationTwo);
 
         private static bool DoesImageExistRemotely(string uriToImage)
         {
