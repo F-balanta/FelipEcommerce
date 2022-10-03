@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace FelipEcommerce.Application.DAO
 {
+
     public class InvoiceWithInvoiceDetailsDto : BaseDto
     {
         public string InvoiceNumber { get; set; }
