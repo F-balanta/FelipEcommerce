@@ -12,12 +12,12 @@ namespace FelipEcommerce.Application.InvoiceDetail
 {
     public class GetInvoiceDetailById
     {
-        public class Query : IRequest<InvoiceDetailDto>
+        public class Query : IRequest<InvoiceDetailWithProductDto>
         {
             public int Id { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, InvoiceDetailDto>
+        public class Handler : IRequestHandler<Query, InvoiceDetailWithProductDto>
         {
             private readonly FelipEcommerceContext _context;
             private readonly IMapper _mapper;
@@ -28,9 +28,10 @@ namespace FelipEcommerce.Application.InvoiceDetail
                 _mapper = mapper;
             }
 
-            public async Task<InvoiceDetailDto> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<InvoiceDetailWithProductDto> Handle(Query request, CancellationToken cancellationToken)
             {
                 var invoiceDetail = await _context.InvoicesDetail
+                    .Include(x => x.Product)
                     .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken: cancellationToken);
 
                 if (invoiceDetail == null)
@@ -41,7 +42,7 @@ namespace FelipEcommerce.Application.InvoiceDetail
                                 $"There is no detailed invoice record associated with the id {request.Id}. Please try again."
                         });
 
-                var invoiceDetailDto = _mapper.Map<InvoiceDetailDto>(invoiceDetail);
+                var invoiceDetailDto = _mapper.Map<InvoiceDetailWithProductDto>(invoiceDetail);
                 return invoiceDetailDto;
             }
         }

@@ -25,6 +25,21 @@ namespace FelipEcommerce.Application.Profiles
                 .ForMember(x => x.User, y => y.MapFrom(z => z.User))
                 .ReverseMap();
 
+            CreateMap<Domain.Models.Invoice, InvoiceWithInvoiceDetailsDto>()
+                .ForMember(x => x.User, y => y.MapFrom(z => z.User))
+                .ForMember(x => x.InvoiceDetails, y => y.MapFrom(z => z.InvoiceDetail))
+                .ReverseMap();
+
+            CreateMap<Domain.Models.Invoice, InvoiceWithDetailsWithoutClientDto>()
+                .ForMember(x => x.User, y => y.MapFrom(z => z.User))
+                .ForMember(x => x.InvoiceDetails, y => y.MapFrom(z => z.InvoiceDetail))
+                .ReverseMap();
+
+            CreateMap<Domain.Models.Invoice, InvoiceWhitDetailsWithoutUserDto>()
+                .ForMember(x => x.Client, y => y.MapFrom(z => z.Client))
+                .ForMember(x => x.InvoiceDetails, y => y.MapFrom(z => z.InvoiceDetail))
+                .ReverseMap();
+
             CreateMap<Domain.Models.Invoice, InvoiceWithoutClientDto>()
                 .ForMember(x => x.User, y => y.MapFrom(z => z.User))
                 .ReverseMap();
@@ -35,6 +50,10 @@ namespace FelipEcommerce.Application.Profiles
 
 
             CreateMap<Domain.Models.InvoiceDetail, InvoiceDetailDto>();
+
+            CreateMap<Domain.Models.InvoiceDetail, InvoiceDetailWithProductDto>()
+                .ForMember(x => x.Product, y => y.MapFrom(z => z.Product))
+                .ReverseMap();
 
             CreateMap<Domain.Models.Product, ProductDto>().ReverseMap();
 

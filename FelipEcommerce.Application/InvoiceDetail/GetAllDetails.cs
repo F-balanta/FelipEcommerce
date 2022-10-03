@@ -12,11 +12,11 @@ namespace FelipEcommerce.Application.InvoiceDetail
 {
     public class GetAllDetails
     {
-        public class Query : IRequest<List<InvoiceDetailDto>>
+        public class Query : IRequest<List<InvoiceDetailWithProductDto>>
         {
         }
 
-        public class Handler : IRequestHandler<Query, List<InvoiceDetailDto>>
+        public class Handler : IRequestHandler<Query, List<InvoiceDetailWithProductDto>>
         {
             private readonly FelipEcommerceContext _context;
             private readonly IMapper _mapper;
@@ -27,13 +27,14 @@ namespace FelipEcommerce.Application.InvoiceDetail
                 _mapper = mapper;
             }
 
-            public async Task<List<InvoiceDetailDto>> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<List<InvoiceDetailWithProductDto>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var invoiceDetail = await _context.InvoicesDetail
+                    .Include(x => x.Product)
                     .ToListAsync(cancellationToken: cancellationToken);
 
                 var invoiceDetailDto =
-                    _mapper.Map<List<Domain.Models.InvoiceDetail>, List<InvoiceDetailDto>>(invoiceDetail);
+                    _mapper.Map<List<Domain.Models.InvoiceDetail>, List<InvoiceDetailWithProductDto>>(invoiceDetail);
                 return invoiceDetailDto;
             }
         }

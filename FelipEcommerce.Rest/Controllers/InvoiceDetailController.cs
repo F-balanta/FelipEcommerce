@@ -19,13 +19,13 @@ namespace FelipEcommerce.Rest.Controllers
         }
 
         [HttpGet]
-        public async Task<List<InvoiceDetailDto>> List()
+        public async Task<List<InvoiceDetailWithProductDto>> List()
         {
             return await _mediator.Send(new GetAllDetails.Query());
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<InvoiceDetailDto>> GetInvoiceDetail(int id)
+        public async Task<ActionResult<InvoiceDetailWithProductDto>> GetInvoiceDetail(int id)
         {
             return await _mediator.Send(new GetInvoiceDetailById.Query {Id = id});
         }

@@ -79,7 +79,6 @@ namespace FelipEcommerce.Application.InvoiceDetail
 
                 inventory.Qty += invoiceDetail.Qty;
 
-                //TODO: Falta terminar la de implementar la lógica al momento de actualizar y eliminar, para que se afecte el inventario
 
                 invoice.SubTotal -= _util.GetSimplePrice(invoiceDetail.Qty, product.Price);
 

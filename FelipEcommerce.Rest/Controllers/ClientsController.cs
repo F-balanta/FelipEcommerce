@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using FelipEcommerce.Application.Invoice;
 
 namespace FelipEcommerce.Rest.Controllers
 {
@@ -28,6 +29,20 @@ namespace FelipEcommerce.Rest.Controllers
         public async Task<ActionResult<ClientDto>> GetClient(int id)
         {
             return await _mediator.Send(new GetClientById.Query { Id = id });
+        }
+
+
+        [HttpGet("{clientId:int}/Invoices")]
+        public async Task<ActionResult<List<InvoiceWithDetailsWithoutClientDto>>> GetInvoicesByClient(int clientId)
+        {
+            return await _mediator.Send(new GetInvoicesByClient.Query { ClientId = clientId });
+        }
+
+        [HttpGet("{clientId:int}/Invoices/{invoiceNumber}")]
+        public async Task<ActionResult<InvoiceWithDetailsWithoutClientDto>> GetInvoiceByClientByInvoiceId(int clientId,
+            string invoiceNumber)
+        {
+            return await _mediator.Send(new GetInvoiceByClient.Query { ClientId = clientId, InvoiceNumber = invoiceNumber });
         }
 
         [HttpPost]
