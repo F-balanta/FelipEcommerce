@@ -47,7 +47,7 @@ namespace FelipEcommerce.Application.Invoice
                                 $"There is no customer associated with the id {request.ClientId}. Please try again."
                         });
 
-                if (await _context.Clients.FindAsync(request.UserId) == null)
+                if (await _context.Users.FindAsync(request.UserId) == null)
                     throw new RestException(HttpStatusCode.NotFound,
                         new
                         {
