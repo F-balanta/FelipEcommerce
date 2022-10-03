@@ -30,6 +30,8 @@ namespace FelipEcommerce.Application.Invoice
                 CancellationToken cancellationToken)
             {
                 var invoices = await _context.Invoices
+                    .Include(x => x.Client)
+                    .Include(x => x.User)
                     .Include(x => x.InvoiceDetail)
                     .ThenInclude(x => x.Product)
                     .ToListAsync(cancellationToken: cancellationToken);
