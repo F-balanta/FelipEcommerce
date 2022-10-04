@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div>
+      <label for="txtNombre" class="form-label">Nombre Producto</label>
+      <input class="form-control" id="txtNombre" type="text" required name="nombre" [(ngModel)]="newProduct.name">
+    </div>
+    <div>
+      <label for="txtDescripcion" class="form-label">Descripcion</label>
+      <textarea id="txtDescripcion" class="form-control" required name="descripcion" [(ngModel)]="newProduct.description" ></textarea>
+    </div>
+    <div>
+      <label for="txtImagen" class="form-label">Url Imagen</label>
+      <input id="txtImagen" class="form-control" type="text" required name="imagen" [(ngModel)]="newProduct.urlImage" >
+    </div>
+    <div>
+      <label for="txtPrecio" class="form-label">Precio</label>
+      <input id="txtPrecio" class="form-control" type="number" required [(ngModel)]="newProduct.price" >
+    </div>
+    <div class="d-inline-flex pt-3">
+      <button class="btn btn-secondary p-2" (click)="clearForm()">Limpiar</button>
+      <button class="btn btn-success p-2"  (click)="onCreateNewProduct(newProduct)">Crear</button>
+    </div>
+  </div>
+</div>

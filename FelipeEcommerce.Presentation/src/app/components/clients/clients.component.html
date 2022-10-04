@@ -1,0 +1,84 @@
+<app-nav></app-nav>
+<div class="container">
+  <ng-template #formEditClient let-modal>
+    <div class="modal-header">
+      <h4 class="modal-tittle">Update Client</h4>
+      <button class="close" aria-label="close" type="button" (click)="modal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div>
+          <label for="txtFirstName" class="form-label">First Name</label>
+          <input class="form-control" id="txtFirstName" type="text" required name="nombre" [(ngModel)]="_clients.firstName">
+        </div>
+        <div>
+          <label for="txtLastName" class="form-label">Last Name</label>
+          <input class="form-control" id="txtLastName" type="text" required name="nombre" [(ngModel)]="_clients.lastName">
+        </div>
+        <div>
+          <label for="txtPhone" class="form-label">Phone</label>
+          <input class="form-control" id="txtPhone" type="text" required name="nombre" [(ngModel)]="_clients.phone">
+        </div>
+        <div>
+          <label for="txtDni" class="form-label">DNI</label>
+          <input class="form-control" id="txtDni" type="text" required name="nombre" [(ngModel)]="_clients.dni">
+        </div>
+        <div>
+          <label for="txtAddress" class="form-label">Address</label>
+          <input id="txtAddress" class="form-control" type="text" required name="imagen" [(ngModel)]="_clients.address">
+        </div>
+        <div>
+          <label for="txtAge" class="form-label">Age</label>
+          <input id="txtAge" class="form-control" type="text" required [(ngModel)]="_clients.age">
+        </div>
+        <div class="d-inline-flex pt-3">
+          <button class="btn btn-secondary p-2" (click)="modal.close()">Cancelar</button>
+          <button class="btn btn-success p-2" required (click)="onUpdateClient(_clients)">Update</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer"></div>
+  </ng-template>
+  <h1 class="pt-3 pb-3 text-center">CLIENTS</h1>
+  <a class="btn btn-primary" href="createClient">Crete Client</a>
+  <div class="row text-center mt-5">
+
+    <div class="col">
+      <table id="dtClient" class="table table-bordered table-responsive-sm" style="width: 100%">
+        <thead>
+        <tr align="center">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone</th>
+          <th>DNI</th>
+          <th>Address</th>
+          <th>Age</th>
+          <th>Actions</th>
+          <th>Invoices</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of datatable">
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.dni}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.age}}</td>
+          <td align="center">
+            <button class="btn btn-secondary m-1" (click)="getDataEdit(item)">Select</button>
+            <button class="btn btn-success m-1"(click)="modal.open(formEditClient)">Edit</button>
+            <button class="btn btn-danger m-1" (click)="getDataDelete(item)">Delete</button>
+          </td>
+          <td>
+            <a [routerLink]="['/clients', item.id]">View Invoices</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

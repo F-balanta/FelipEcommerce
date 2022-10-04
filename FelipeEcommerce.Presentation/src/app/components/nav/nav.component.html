@@ -1,0 +1,50 @@
+<div class="show-mobile">
+  <div>
+    <button (click)="toggleMenu()">
+      <img src="./assets/svg/icon_menu.svg" alt="menu">
+    </button>
+    <a href="">
+      <img class="logo" src="./assets/svg/firmar.png" alt="logo">
+    </a>
+    <div class="cart">
+      <a href="">
+        <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+      </a>
+      <span class="counter">{{ counter }}</span>
+    </div>
+
+  </div>
+  <div class="side-menu" [class.active]="activeMenu">
+    <button (click)="toggleMenu()">Close</button>
+    <ul>
+      <li><a href="">All</a></li>
+      <li><a href="">Clothes</a></li>
+      <li><a href="">Electronics</a></li>
+    </ul>
+  </div>
+</div>
+<div class="hide-mobile">
+  <div>
+    <nav>
+      <a class="logo" href="">
+        <img class="logo" src="./assets/svg/firmar.png" alt="logo">
+      </a>
+      <ul>
+        <li><a routerLink="" >Inicio</a></li>
+        <li><a href="inventory">Inventario</a></li>
+        <li><a href="invoices">Facturas</a></li>
+        <li><a href="clients">Clientes</a></li>
+        <li><a href="users">Usuarios</a></li>
+      </ul>
+    </nav>
+    <div class="info">
+      <div class="account">User@register.com</div>
+      <div class="cart">
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="logo">
+        </a>
+        <span class="counter">{{ counter }}</span>
+      </div>
+    </div>
+  </div>
+</div>

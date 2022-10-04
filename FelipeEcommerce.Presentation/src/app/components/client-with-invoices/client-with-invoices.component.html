@@ -1,0 +1,35 @@
+<app-nav></app-nav>
+<div class="container">
+  <h2 class="text-center">CLIENT</h2>
+  <p><strong>First Name: </strong>{{clients.firstName}}</p>
+  <p><strong>Last Name: </strong>{{clients.lastName}}</p>
+  <p><strong>DNI: </strong>{{clients.dni}}</p>
+  <button [routerLink]="['/createInvoiceClient',receivedId]">Create Invoice</button>
+  <table class="table table-bordered pt-3">
+    <thead>
+      <tr>
+        <th>INVOICE NUMBER</th>
+        <th>INVOICED DATE</th>
+        <th>SUBTOTAL</th>
+        <th>TOTAL</th>
+        <th>ACTIONS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cInvoices">
+
+        <td>{{item.invoiceNumber}}</td>
+        <td>{{item.invoiceDate}}</td>
+        <td>{{item.subTotal}}</td>
+        <td>{{item.total}}</td>
+        <td>
+          <button>Select</button>
+          <button>Edit</button>
+          <button>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+

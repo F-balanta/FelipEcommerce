@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<div class="container">
+  <h1 class="text-center">Create Invoice</h1>
+  <div class="mt-5 mb-5">
+    <div class="col md-2">
+      <label for="txtClientId" class="form-label">Client ID</label>
+      <input type="text" id="txtClientId" class="form-control" name="clientId" disabled [(ngModel)]="newInvoice.clientId">
+    </div>
+    <div class="col md-2">
+      <label for="txtUserId" class="form-label">User ID</label>
+      <input type="text" id="txtUserId" class="form-control" name="UserId" [(ngModel)]="newInvoice.userId">
+    </div>
+    <div class="col md-2">
+      <label for="txtinvoiceDate" class="form-label">Invoice Date</label>
+      <input type="text"  id="txtinvoiceDate" class="form-control" name="invoiceDate" [(ngModel)]="newInvoice.invoiceDate">
+    </div>
+    <div class="col md-2">
+      <label for="txtIsv" class="form-label">ISV</label>
+      <input type="text" id="txtIsv" class="form-control" name="isv" [(ngModel)]="newInvoice.isv">
+    </div>
+    <div class="col md-2">
+      <label for="txtDNI" class="form-label">Discount</label>
+      <input type="text" id="txtDNI" class="form-control" name="dni" [(ngModel)]="newInvoice.discount">
+    </div>
+    <div class="d-inline-flex pt-3">
+      <button class="btn btn-secondary p-2">Limpiar</button>
+      <button class="btn btn-success p-2" (click)="getDataForm(newInvoice)">Crear</button>
+    </div>
+  </div>
+
+
+</div>
+

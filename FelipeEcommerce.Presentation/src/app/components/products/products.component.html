@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="container modal-Products">
+    <ng-template #formEditProduct let-modal>
+      <div class="modal-header">
+        <h4 class="modal-tittle">Crear Producto</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div>
+            <label for="txtNombre" class="form-label">Nombre Producto</label>
+            <input class="form-control" id="txtNombre" type="text" required name="nombre" [(ngModel)]="product.name">
+          </div>
+          <div>
+            <label for="txtDescripcion" class="form-label">Descripcion</label>
+            <textarea id="txtDescripcion" class="form-control" required name="descripcion" [(ngModel)]="product.description"></textarea>
+          </div>
+          <div>
+            <label for="txtImagen" class="form-label">Url Imagen</label>
+            <input id="txtImagen" class="form-control" type="text" required name="imagen" [(ngModel)]="product.urlImage">
+          </div>
+          <div>
+            <label for="txtPrecio" class="form-label">Precio</label>
+            <input id="txtPrecio" class="form-control" type="text" required [(ngModel)]="product.price">
+          </div>
+          <div class="d-inline-flex pt-3">
+            <button class="btn btn-secondary p-2" (click)="modal.close()">Cancelar</button>
+            <button class="btn btn-success p-2" required (click)="onUpdateProduct(product)">Crear</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </ng-template>
+  </div>
+
+  <div class="w-33">
+    <div class="container-bottom">
+      <button class="btn btn-primary mt-3 mb-3 button-create" [routerLink]="['createProduct']">Crear Producto</button>
+    </div>
+  </div>
+
+  <div class="products--grid">
+    <app-product
+      *ngFor="let product of products"
+      [product]="product"
+      (addedProduct)="onAddToShoppingCart($event)"
+      (showProduct)="onShowDetail($event)"
+    ></app-product>
+  </div>
+
+  <div class="product-detail shadow-sm p-3 mb-5 bg-white rounded" [class.active]="showProductDetail">
+    <div *ngIf="productChosen">
+      <button (click)="toggleProductDetail()">Close</button>
+      <h3 class="product-name">{{productChosen.name}}</h3>
+      <img class="product-image" [src]="productChosen.urlImage"/>
+      <p class="product-description">{{productChosen.description}}</p>
+      <button (click)="modal.open(formEditProduct)">Editar</button>
+      <button (click)="onDeleteProduct()">ELiminar</button>
+    </div>
+  </div>
+</div>
